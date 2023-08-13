@@ -11,4 +11,8 @@ class Stock(models.Model):
      updated_date = fields.Date('updated date')
      qty = fields.Integer('quantity')
      unit = fields.Char('Unitialisation')
+
+     delivery_ids = fields.One2many(comodel_name='hackathon.delivery', inverse_name='stock_id')
+     consomable_ids = fields.One2many(comodel_name='hackathon.consumable', inverse_name='stock_id')
+
      

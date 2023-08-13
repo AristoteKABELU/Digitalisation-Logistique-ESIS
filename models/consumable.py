@@ -12,3 +12,5 @@ class Consumable(models.Model):
      add_date = fields.Date('add date')
      deleted_date = fields.Date('deleted date')
      updated_date = fields.Date('updated date')
+
+     stock_id = fields.Many2one(comodel_name='hackathon.stock')

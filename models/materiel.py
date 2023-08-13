@@ -8,3 +8,7 @@ class Materiel(models.Model):
 
      num_serial = fields.Char('num_serial')
 
+     registration_id = fields.Many2one(comodel_name='hackathon.registration')
+     category_id = fields.Many2one(comodel_name='hackathon.category')
+
+

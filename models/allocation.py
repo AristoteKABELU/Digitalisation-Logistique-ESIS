@@ -11,6 +11,4 @@ class Allocation(models.Model):
     attachment = fields.Char('attachemnt')
     given_to = fields.Char('given to')
 
-
-
-
+    user_id = fields.Many2one(comodel_name='hackathon.user')

@@ -7,3 +7,6 @@ class Delivery(models.Model):
     delivery_date = fields.Date('delivery date')
     motif = fields.Char('motif')
     qty = fields.Integer('Qty')
+
+    user_id = fields.Many2one(comodel_name='hackathon.user')
+    stock_id = fields.Many2one(comodel_name='')

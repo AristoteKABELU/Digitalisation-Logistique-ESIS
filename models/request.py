@@ -9,3 +9,5 @@ class Request(models.Model):
     imputation = fields.Char('imputation')
     state_request = fields.Integer('state request')
     dateofRequest = fields.Integer('dateofRequest')
+
+    need_id = fields.Many2one(comodel_name='hackathon.needs')
