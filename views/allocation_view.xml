@@ -1,0 +1,66 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="hackathon.allocation_list">
+      <field name="name">allocation list</field>
+      <field name="model">hackathon.allocation</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="motif"/>
+          <field name="inserted_date"/>
+          <field name="updated_date"/>
+          <field name="delivery_date"/>
+          <field name="attachment"/>
+          <field name="given_to"/>
+        </tree>
+      </field>
+    </record>
+
+   <!-- explicit list form definition -->
+
+    <record model="ir.ui.view" id="hackathon.allocation_form_view">
+      <field name="name">allocation form</field>
+      <field name="model">hackathon.allocation</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="motif"/>
+            <field name="inserted_date"/>
+            <field name="updated_date"/>
+            <field name="delivery_date"/>
+            <field name="attachment"/>
+            <field name="given_to"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="hackathon.allocation_window">
+      <field name="name">allocation window</field>
+      <field name="res_model">hackathon.allocation</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="hackathon" id="hackathon.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="allocation" id="hackathon_allocation_cat" parent="hackathon.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="List of allocation" id="hackathon_allocation_list" parent="hackathon_allocation_cat"
+              action="hackathon.allocation_window"/>
+
+<!--    <menuitem name="Server to list" id="hackathon" parent="hackathon.menu_2"-->
+<!--              action="hackathon.action_server"/>-->
+
+  </data>
+</odoo>

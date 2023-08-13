@@ -1,0 +1,66 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="hackathon.consumable_list">
+      <field name="name">consumable list</field>
+      <field name="model">hackathon.consumable</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="type"/>
+          <field name="add_date"/>
+          <field name="deleted_date"/>
+          <field name="updated_date"/>
+        </tree>
+      </field>
+    </record>
+
+   <!-- explicit list form definition -->
+
+    <record model="ir.ui.view" id="hackathon.consumable_form_view">
+      <field name="name">consumable form</field>
+      <field name="model">hackathon.consumable</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="description"/>
+            <field name="type"/>
+            <field name="add_date"/>
+            <field name="deleted_date"/>
+            <field name="updated_date"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="hackathon.consumable_window">
+      <field name="name">consumable window</field>
+      <field name="res_model">hackathon.consumable</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="hackathon" id="hackathon.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="consumable" id="hackathon_consumable_cat" parent="hackathon.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="List of consumable" id="hackathon_consumable_list" parent="hackathon_consumable_cat"
+              action="hackathon.consumable_window"/>
+
+<!--    <menuitem name="Server to list" id="hackathon" parent="hackathon.menu_2"-->
+<!--              action="hackathon.action_server"/>-->
+
+  </data>
+</odoo>

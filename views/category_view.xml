@@ -1,0 +1,56 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="hackathon.category_list">
+      <field name="name">category list</field>
+      <field name="model">hackathon.category</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="designation"/>
+        </tree>
+      </field>
+    </record>
+
+   <!-- explicit list form definition -->
+
+    <record model="ir.ui.view" id="hackathon.category_form_view">
+      <field name="name">category form</field>
+      <field name="model">hackathon.category</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="designation"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="hackathon.category_window">
+      <field name="name">category window</field>
+      <field name="res_model">hackathon.category</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="hackathon" id="hackathon.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="category" id="hackathon_category_cat" parent="hackathon.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="List of category" id="hackathon_category_list" parent="hackathon_category_cat"
+              action="hackathon.category_window"/>
+
+<!--    <menuitem name="Server to list" id="hackathon" parent="hackathon.menu_2"-->
+<!--              action="hackathon.action_server"/>-->
+
+  </data>
+</odoo>
