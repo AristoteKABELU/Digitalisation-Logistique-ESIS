@@ -20,6 +20,8 @@
       <field name="arch" type="xml">
         <tree>
           <field name="num_serial"/>
+          <field name="registration_id"/>
+          <field name="category_id"/>
         </tree>
       </field>
     </record>

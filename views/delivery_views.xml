@@ -24,6 +24,8 @@
           <field name="delivery_date"/>
           <field name="motif"/>
           <field name="qty"/>
+          <field name="user_id"/>
+          <field name="stock_id"/>
         </tree>
       </field>
     </record>

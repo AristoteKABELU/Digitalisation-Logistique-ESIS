@@ -9,4 +9,4 @@ class Delivery(models.Model):
     qty = fields.Integer('Qty')
 
     user_id = fields.Many2one(comodel_name='hackathon.user')
-    stock_id = fields.Many2one(comodel_name='')
+    stock_id = fields.Many2one(comodel_name='hackathon.stock')

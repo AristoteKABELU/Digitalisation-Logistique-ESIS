@@ -31,6 +31,7 @@
             <field name="delivery_date"/>
             <field name="attachment"/>
             <field name="given_to"/>
+            <field name="user_id"/>
           </group>
         </form>
       </field>
