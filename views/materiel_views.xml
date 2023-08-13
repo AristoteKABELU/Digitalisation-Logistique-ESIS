@@ -1,0 +1,50 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="materiel_list_view">
+      <field name="name">materiel list</field>
+      <field name="model">hackathon.materiel</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="num_serial"/>
+        </tree>
+      </field>
+    </record>
+
+      <!-- explicit form view definition -->
+
+    <record model="ir.ui.view" id="materiel_form_view">
+      <field name="name">materiel form</field>
+      <field name="model">hackathon.materiel</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="num_serial"/>
+        </tree>
+      </field>
+    </record>
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="materiel_action_window">
+      <field name="name">materiel window</field>
+      <field name="res_model">hackathon.materiel</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+
+    <menuitem name="hackathon" id="hackathon.menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="materiel" id="hackathon_materiel_menu" parent="hackathon.menu_root"/>
+ <!--   <menuitem name="Menu 2" id="hackathon.menu_2" parent="hackathon.menu_root"/>
+-->
+    <!-- actions -->
+
+    <menuitem name="List of materiel" id="hackathon_materiel_list" parent="hackathon_materiel_menu"
+              action="materiel_action_window"/>
+  <!--  <menuitem name="Server to list" id="hackathon" parent="hackathon.menu_2"
+              action="hackathon.action_server"/>
+-->
+  </data>
+</odoo>

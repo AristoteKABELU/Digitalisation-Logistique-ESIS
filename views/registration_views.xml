@@ -1,0 +1,54 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="registration_list_view">
+      <field name="name">registration list</field>
+      <field name="model">hackathon.registration</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="registration_date"/>
+          <field name="modification_date"/>
+          <field name="deletion_date"/>
+        </tree>
+      </field>
+    </record>
+
+      <!-- explicit form view definition -->
+
+    <record model="ir.ui.view" id="registration_form_view">
+      <field name="name">registration form</field>
+      <field name="model">hackathon.registration</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="registration_date"/>
+          <field name="modification_date"/>
+          <field name="deletion_date"/>
+        </tree>
+      </field>
+    </record>
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="registration_action_window">
+      <field name="name">registration window</field>
+      <field name="res_model">hackathon.registration</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+
+    <menuitem name="hackathon" id="hackathon.menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="registration" id="hackathon_registration_menu" parent="hackathon.menu_root"/>
+ <!--   <menuitem name="Menu 2" id="hackathon.menu_2" parent="hackathon.menu_root"/>
+-->
+    <!-- actions -->
+
+    <menuitem name="List of registration" id="hackathon_registration_list" parent="hackathon_registration_menu"
+              action="registration_action_window"/>
+  <!--  <menuitem name="Server to list" id="hackathon" parent="hackathon.menu_2"
+              action="hackathon.action_server"/>
+-->
+  </data>
+</odoo>

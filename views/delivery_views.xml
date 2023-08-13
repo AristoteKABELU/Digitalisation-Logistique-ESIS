@@ -1,0 +1,54 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="delivery_list_view">
+      <field name="name">delivery list</field>
+      <field name="model">hackathon.delivery</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="delivery_date"/>
+          <field name="motif"/>
+          <field name="qty"/>
+        </tree>
+      </field>
+    </record>
+
+      <!-- explicit form view definition -->
+
+    <record model="ir.ui.view" id="delivery_form_view">
+      <field name="name">delivery form</field>
+      <field name="model">hackathon.delivery</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="delivery_date"/>
+          <field name="motif"/>
+          <field name="qty"/>
+        </tree>
+      </field>
+    </record>
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="delivery_action_window">
+      <field name="name">delivery window</field>
+      <field name="res_model">hackathon.delivery</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+
+    <menuitem name="hackathon" id="hackathon.menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="delivery" id="hackathon_delivery_menu" parent="hackathon.menu_root"/>
+ <!--   <menuitem name="Menu 2" id="hackathon.menu_2" parent="hackathon.menu_root"/>
+-->
+    <!-- actions -->
+
+    <menuitem name="List of delivery" id="hackathon_delivery_list" parent="hackathon_delivery_menu"
+              action="delivery_action_window"/>
+  <!--  <menuitem name="Server to list" id="hackathon" parent="hackathon.menu_2"
+              action="hackathon.action_server"/>
+-->
+  </data>
+</odoo>
