@@ -33,7 +33,6 @@
           <field name="Unit_price"/>
           <field name="Total_price"/>
           <field name="user_id"/>
-          <field name="requests"/>
         </tree>
       </field>
     </record>

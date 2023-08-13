@@ -28,6 +28,7 @@
           <field name="imputation"/>
           <field name="state_request"/>
           <field name="dateofRequest"/>
+          <field name="need_id"/>
         </tree>
       </field>
     </record>
