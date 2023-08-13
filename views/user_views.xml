@@ -1,0 +1,58 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="user_list_view">
+      <field name="name">user list</field>
+      <field name="model">hackathon.user</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="lastname"/>
+          <field name="firstname"/>
+          <field name="job_title"/>
+        </tree>
+      </field>
+    </record>
+
+      <!-- explicit form view definition -->
+
+    <record model="ir.ui.view" id="user_form_view">
+      <field name="name">user form</field>
+      <field name="model">hackathon.user</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="lastname"/>
+          <field name="firstname"/>
+          <field name="email"/>
+          <field name="password"/>
+          <field name="job_title"/>
+        </tree>
+      </field>
+    </record>
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="user_action_window">
+      <field name="name">user window</field>
+      <field name="res_model">hackathon.user</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+
+    <menuitem name="hackathon" id="hackathon.menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="user" id="hackathon_user_menu" parent="hackathon.menu_root"/>
+ <!--   <menuitem name="Menu 2" id="hackathon.menu_2" parent="hackathon.menu_root"/>
+-->
+    <!-- actions -->
+
+    <menuitem name="List of user" id="hackathon_user_list" parent="hackathon_user_menu"
+              action="user_action_window"/>
+  <!--  <menuitem name="Server to list" id="hackathon" parent="hackathon.menu_2"
+              action="hackathon.action_server"/>
+-->
+  </data>
+</odoo>

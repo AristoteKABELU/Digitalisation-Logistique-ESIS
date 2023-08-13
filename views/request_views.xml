@@ -1,0 +1,58 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="request_list_view">
+      <field name="name">request list</field>
+      <field name="model">hackathon.request</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="object"/>
+          <field name="applicant"/>
+          <field name="imputation"/>
+          <field name="state_request"/>
+          <field name="dateofRequest"/>
+        </tree>
+      </field>
+    </record>
+
+      <!-- explicit form view definition -->
+
+    <record model="ir.ui.view" id="request_form_view">
+      <field name="name">request form</field>
+      <field name="model">hackathon.request</field>
+      <field name="arch" type="xml">
+        <tree>
+         <field name="object"/>
+          <field name="applicant"/>
+          <field name="imputation"/>
+          <field name="state_request"/>
+          <field name="dateofRequest"/>
+        </tree>
+      </field>
+    </record>
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="request_action_window">
+      <field name="name">request window</field>
+      <field name="res_model">hackathon.request</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+
+    <menuitem name="hackathon" id="hackathon.menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="request" id="hackathon_request_menu" parent="hackathon.menu_root"/>
+ <!--   <menuitem name="Menu 2" id="hackathon.menu_2" parent="hackathon.menu_root"/>
+-->
+    <!-- actions -->
+
+    <menuitem name="List of request" id="hackathon_request_list" parent="hackathon_request_menu"
+              action="request_action_window"/>
+  <!--  <menuitem name="Server to list" id="hackathon" parent="hackathon.menu_2"
+              action="hackathon.action_server"/>
+-->
+  </data>
+</odoo>

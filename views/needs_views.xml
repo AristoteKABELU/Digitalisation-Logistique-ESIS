@@ -1,0 +1,62 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="needs_list_view">
+      <field name="name">needs list</field>
+      <field name="model">hackathon.needs</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="object"/>
+          <field name="impulsion"/>
+          <field name="description"/>
+          <field name="reference"/>
+          <field name="quantity"/>
+          <field name="Unit_price"/>
+          <field name="Total_price"/>
+        </tree>
+      </field>
+    </record>
+
+      <!-- explicit form view definition -->
+
+    <record model="ir.ui.view" id="needs_form_view">
+      <field name="name">needs form</field>
+      <field name="model">hackathon.needs</field>
+      <field name="arch" type="xml">
+        <tree>
+           <field name="object"/>
+          <field name="impulsion"/>
+          <field name="description"/>
+          <field name="reference"/>
+          <field name="quantity"/>
+          <field name="Unit_price"/>
+          <field name="Total_price"/>
+        </tree>
+      </field>
+    </record>
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="needs_action_window">
+      <field name="name">needs window</field>
+      <field name="res_model">hackathon.needs</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+
+    <menuitem name="hackathon" id="hackathon.menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="needs" id="hackathon_needs_menu" parent="hackathon.menu_root"/>
+ <!--   <menuitem name="Menu 2" id="hackathon.menu_2" parent="hackathon.menu_root"/>
+-->
+    <!-- actions -->
+
+    <menuitem name="List of needs" id="hackathon_needs_list" parent="hackathon_needs_menu"
+              action="needs_action_window"/>
+  <!--  <menuitem name="Server to list" id="hackathon" parent="hackathon.menu_2"
+              action="hackathon.action_server"/>
+-->
+  </data>
+</odoo>

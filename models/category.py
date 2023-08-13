@@ -7,4 +7,3 @@ class Category(models.Model):
      _name = 'hackathon.category'
 
      designation = fields.Char('designation')
-
