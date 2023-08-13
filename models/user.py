@@ -10,7 +10,7 @@ class User(models.Model):
      lastname = fields.Char('lastname')
      firstname = fields.Char('firstname')
      email = fields.Char('email')
-     password = fields.Char('password')
+     password = fields.Char(string='password', password=True)
      job_title = fields.Char('job_title')
 
      needs_ids = fields.One2many(comodel_name='hackathon.needs', inverse_name='user_id')
