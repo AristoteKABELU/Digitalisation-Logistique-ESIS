@@ -1,0 +1,27 @@
+<odoo>
+    <template id="responsablePage" name="responsable">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <li>
+                <a href="#">Gerer materiels</a>
+                <ul class="sub-menu">
+                    <li><a href="#">Enregistrer materiel</a></li>
+                    <li><a href="#">Allouer materiel</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Gerer demande</a>
+                <ul class="sub-menu">
+                    <li><a href="/request">Effectuer demande</a></li>
+                    <li><a href="/needs">Voir besoin</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Generer rapport</a>
+            </li>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

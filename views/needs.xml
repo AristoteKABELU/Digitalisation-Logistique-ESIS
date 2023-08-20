@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="hackathon.needsPage" name="need page">
+        <t t-call="website.layout">
+            <div class="container">
+                <table class="table table-bordered mt32">
+                <thead>
+                    <tr>
+                        <th class="text-center"><span>Object</span></th>
+                        <th class="text-center"><span>impulsion</span></th>
+                        <th class="text-center"><span>description</span></th>
+                        <th class="text-center"><span>reference</span></th>
+                        <th class="text-center"><span>Quantity</span></th>
+                        <th class="text-center"><span>Unit price</span></th>
+                        <th class="text-center"><span>Total price</span></th>
+                        <th class="text-center"><span>User</span></th>
+                        <th class="text-center"><span>requests</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="needs" t-as="need">
+                        <tr class="text-center">
+                            <td><span t-field="need.object"/></td>
+                            <td><span t-field="need.impulsion"/></td>
+                            <td><span t-field="need.description"/></td>
+                            <td><span t-field="need.reference"/></td>
+                            <td><span t-field="need.quantity"/></td>
+                            <td><span t-field="need.Unit_price"/></td>
+                            <td><span t-field="need.Total_price"/></td>
+                            <td><span t-field="need.user_id"/></td>
+                            <td><span t-field="need.request_id"/></td>
+                            <td>
+                                <form action="/delete_need" method="post">
+                                    <field name="object_id" widget="hidden" value="okay"/>
+                                    <button type="submit">Delete</button>
+                                </form>
+                                 <form action="/edit_need" method="post">
+                                    <field name="object_id" widget="hidden" value="{{ need.object }}"/>
+                                    <button type="submit">Edit</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+            </div>
+        </t>
+    </template>
+</odoo>

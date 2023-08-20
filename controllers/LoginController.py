@@ -2,22 +2,17 @@ from odoo import http
 
 
 class Login(http.Controller):
-    @http.route('/loginAuthentification', auth='public', website=True)
+    @http.route('/loginAuthentification', auth='public', methods=['POST'], type='http',csrf=False, website=True)
     def checking(self, **kw):
-        for user in http.request.env['hackathon.user'].sudo().search([]):
-            if user.job_title == 'responsable' and kw.get('password') == user.password:
-                print(user.name)
-            elif user.job_title == 'subalterne' and kw.get('password') == user.password:
-                print(user.name)
-            elif user.job_title == 'SGDA' and kw.get('password') == user.password:
-                print(user.name)
-            # else:
-            #     return {'warning': {'title': 'warning',
-            #                         'message': 'mail or password invalid'}}
+        users = http.request.env['hackathon.user'].sudo().search([])
+        for user in users:
+            if (user.email == kw.get('email')) and (kw.get('password') == user.password) and (user.job_title == 'responsable'):
+                return http.request.render('hackathon.responsablePage', {})
+            elif  (user.email == kw.get('email')) and (kw.get('password') == user.password) and (user.job_title == 'subalterne'):
+                return http.request.render('hackathon.subalternePage', {})
+            elif  (user.email == kw.get('email')) and (kw.get('password') == user.password) and (user.job_title == 'SGDA'):
+                return http.request.render('hackathon.subalternePage', {})
 
-            # return http.request.render('hackathon.listing', {
-            #     'root': '/hackathon/hackathon',
-            # })
 
     @http.route('/login', auth='public', website=True)
     def loginPage(self, **kw):

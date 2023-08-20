@@ -28,7 +28,7 @@
           <field name="imputation"/>
           <field name="state_request"/>
           <field name="dateofRequest"/>
-          <field name="need_id"/>
+          <field name="need_ids"/>
         </tree>
       </field>
     </record>

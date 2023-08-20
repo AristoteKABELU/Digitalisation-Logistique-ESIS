@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="subalternePage" name="sulaterne">
+        <h1>Subalterne</h1>
+    </template>
+</odoo>

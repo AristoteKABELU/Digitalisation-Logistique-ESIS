@@ -13,4 +13,4 @@ class Needs(models.Model):
     Total_price = fields.Float('Total price')
 
     user_id = fields.Many2one(comodel_name='hackathon.user')
-    requests = fields.One2many(comodel_name='hackathon.request', inverse_name='need_id')
+    request_id = fields.Many2one(comodel_name='hackathon.request')

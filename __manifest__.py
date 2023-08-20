@@ -35,8 +35,12 @@
         'views/admin/needs_views.xml',
         'views/admin/materiel_views.xml',
         'views/admin/delivery_views.xml',
-        'views/user_view.xml',
-        'views/loginPage.xml',
+        'views/needs.xml',
+        'views/request.xml',
+        'views/responsable.xml',
+        'views/subalterne.xml',
+        'views/login.xml',
+        'views/responsable.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

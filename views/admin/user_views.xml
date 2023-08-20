@@ -26,7 +26,6 @@
           <field name="lastname"/>
           <field name="firstname"/>
           <field name="email"/>
-          <field name="password"/>
           <field name="job_title"/>
         </tree>
       </field>

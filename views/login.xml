@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <template id="hackathon.loginPage" name="login">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <form role="form" action="/loginAuthentification" method="POST">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <div class="form-group">
+                                <label for="email" class="control-label">Email </label>
+                                <input type="email" name="email" id="email" required="required"
+                                    class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="control-label">password </label>
+                                <input type="password" name="password" id="password" class="form-control"/>
+                            </div>
+                            <div class="clearfix oe_login_buttons">
+                                <button type="submit" class="btn btn-primary">Se connecter</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

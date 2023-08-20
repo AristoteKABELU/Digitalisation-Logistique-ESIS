@@ -8,6 +8,6 @@ class Request(models.Model):
     applicant = fields.Char('applicant')
     imputation = fields.Char('imputation')
     state_request = fields.Integer('state request')
-    dateofRequest = fields.Integer('dateofRequest')
+    dateofRequest = fields.Date('dateofRequest')
 
-    need_id = fields.Many2one(comodel_name='hackathon.needs')
+    need_ids = fields.One2many(comodel_name='hackathon.needs', inverse_name='request_id')
