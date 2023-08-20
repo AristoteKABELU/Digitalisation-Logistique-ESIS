@@ -10,7 +10,14 @@ class Needs(models.Model):
     reference = fields.Char('reference')
     quantity = fields.Integer('Quantity')
     Unit_price = fields.Float('Unit price')
-    Total_price = fields.Float('Total price')
+    Total_price = fields.Float(string='Total_price', compute='calcul_price')
 
     user_id = fields.Many2one(comodel_name='hackathon.user')
+<<<<<<< HEAD
     request_id = fields.Many2one(comodel_name='hackathon.request')
+=======
+    requests = fields.One2many(comodel_name='hackathon.request', inverse_name='need_id')
+
+    def calcul_price(self):
+        self.Total_price = self.Unit_price * self.quantity
+>>>>>>> 8ec4f9b515fe5e18336fe4eab453e1b7ad17f547
