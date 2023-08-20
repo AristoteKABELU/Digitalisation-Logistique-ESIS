@@ -12,7 +12,6 @@ class User(models.Model):
      email = fields.Char('email')
      password = fields.Char(string='password', password=True)
      job_title = fields.Char('job_title')
-
      needs_ids = fields.One2many(comodel_name='hackathon.needs', inverse_name='user_id')
      registration_ids = fields.One2many(comodel_name='hackathon.registration', inverse_name='user_id')
      allocation_ids = fields.One2many(comodel_name='hackathon.allocation', inverse_name='user_id')
