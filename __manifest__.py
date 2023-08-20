@@ -34,9 +34,7 @@
         'views/admin/registration_views.xml',
         'views/admin/needs_views.xml',
         'views/admin/materiel_views.xml',
-        'views/admin/delivery_views.xml',
-        'views/user_view.xml',
-        'views/loginPage.xml',
+        'views/admin/delivery_views.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
