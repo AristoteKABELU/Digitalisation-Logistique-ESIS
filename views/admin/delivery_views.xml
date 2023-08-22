@@ -20,13 +20,25 @@
       <field name="name">delivery form</field>
       <field name="model">hackathon.delivery</field>
       <field name="arch" type="xml">
-        <tree>
-          <field name="delivery_date"/>
-          <field name="motif"/>
-          <field name="qty"/>
-          <field name="user_id"/>
-          <field name="stock_id"/>
-        </tree>
+        <form>
+          <group>
+             <field name="delivery_date"/>
+            <field name="motif"/>
+            <field name="qty"/>
+            <field name="user_id"/>
+            <field name="stock_id"/>
+          </group>
+          <group>
+            <notebook>
+              <page string="List user">
+                <field name="user_id"/>
+              </page>
+              <page string="List stock">
+                <field name="stock_id"/>
+              </page>
+            </notebook>
+          </group>
+        </form>
       </field>
     </record>
     <!-- actions opening views on models -->

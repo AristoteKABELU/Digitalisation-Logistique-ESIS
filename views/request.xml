@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <odoo>
-    <template id="hackathon.requestPage" name="request page">
+    <template id="hackathon.formRequest" name="form request">
         <t t-call="website.layout">
             <div class="wrap">
                 <div class="oe_structure">
                     <div class="container">
-                        <form role="form" action="/send_request" method="POST">
-                            <input type="hidden" name="csef_token"/>
+                        <form role="form" action="/request/form/send" method="POST">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                             <div class="form-group">
                                 <label for="object" class="control-label">Object </label>
                                 <input type="text" name="object" id="object" class="form-control"/>
@@ -35,11 +35,69 @@
                                         </t>
                                 </select>
                              </div>
-                            <button type="submit" class="btn btn-primary">Send request</button>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Send request</button>
+                                <button type="reset" class="btn btn-danger">Reset</button>
+                            </div>
                         </form>
+                         <form action="#" method="post">
+                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                             <button type="submit" class="btn btn-secondary">Back</button>
+                         </form>
                     </div>
                 </div>
             </div>
         </t>
 </template>
+
+    <template id="hackathon.listRequest" name="list request">
+        <t t-call="website.layout">
+            <div class="container">
+                <div class="row">
+                    <form action="/request/form/" method="POST" role="form" >
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <button stype="submit" class="btn btn-primary">effectuer demande</button>
+                    </form>
+                </div>
+                <table class="table table-bordered mt32">
+                <thead>
+                    <tr>
+                        <th class="text-center"><span>Object</span></th>
+                        <th class="text-center"><span>applicant</span></th>
+                        <th class="text-center"><span>imputation</span></th>
+                        <th class="text-center"><span>state_request</span></th>
+                        <th class="text-center"><span>Quantity</span></th>
+                        <th class="text-center"><span>dateofRequest</span></th>
+                        <th class="text-center"><span>Needs</span></th>
+<!--                        <th class="text-center"><span>Action</span></th>-->
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="requests" t-as="request">
+                        <tr class="text-center">
+                            <td><span t-field="request.object"/></td>
+                            <td><span t-field="request.applicant"/></td>
+                            <td><span t-field="request.imputation"/></td>
+                            <td><span t-field="request.state_request"/></td>
+                            <td><span t-field="request.dateofRequest"/></td>
+                            <td>
+                                <div class="row">
+                                     <form role="form" action="/request/delete" method="POST" class="col-6">
+                                        <input name="object" type="hidden" t-att-value="request.object"/>
+                                        <button type="submit" class="btn btn-primary">Delete</button>
+                                     </form>
+                                    <form action="/request/edit" method="post" class="col-6">
+                                        <input name="object" type="hidden" t-att-value="request.object"/>
+                                        <button type="submit" class="btn btn-danger">Edit</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+            </div>
+        </t>
+    </template>
 </odoo>

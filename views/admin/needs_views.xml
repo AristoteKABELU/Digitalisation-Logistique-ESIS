@@ -24,16 +24,28 @@
       <field name="name">needs form</field>
       <field name="model">hackathon.needs</field>
       <field name="arch" type="xml">
-        <tree>
-           <field name="object"/>
-          <field name="impulsion"/>
-          <field name="description"/>
-          <field name="reference"/>
-          <field name="quantity"/>
-          <field name="Unit_price"/>
-          <field name="Total_price"/>
-          <field name="user_id"/>
-        </tree>
+        <form>
+          <group>
+            <field name="object"/>
+            <field name="impulsion"/>
+            <field name="description"/>
+            <field name="reference"/>
+            <field name="quantity"/>
+            <field name="Unit_price"/>
+            <field name="Total_price"/>
+            <field name="user_id"/>
+          </group>
+          <group>
+            <notebook>
+              <page string="List users">
+                <fields name="user_id"/>
+              </page>
+              <page string="List request">
+                <fields name="request_id"/>
+              </page>
+            </notebook>
+          </group>
+        </form>
       </field>
     </record>
     <!-- actions opening views on models -->

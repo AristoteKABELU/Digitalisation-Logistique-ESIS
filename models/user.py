@@ -16,3 +16,4 @@ class User(models.Model):
     registration_ids = fields.One2many(comodel_name='hackathon.registration', inverse_name='user_id')
     allocation_ids = fields.One2many(comodel_name='hackathon.allocation', inverse_name='user_id')
     delivery_ids = fields.One2many(comodel_name='hackathon.delivery', inverse_name='user_id')
+

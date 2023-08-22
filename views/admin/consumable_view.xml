@@ -33,6 +33,13 @@
             <field name="updated_date"/>
             <field name="stock_id"/>
           </group>
+          <group>
+            <notebook>
+              <page string="List stock">
+                  <field name="stock_id" />
+              </page>
+            </notebook>
+          </group>
         </form>
       </field>
     </record>

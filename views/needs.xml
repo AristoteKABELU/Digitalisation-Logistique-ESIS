@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <template id="hackathon.needsPage" name="need page">
+    <data>
+        <template id="hackathon.listNeeds" name="need page">
         <t t-call="website.layout">
             <div class="container">
+                <div class="row">
+                    <form action="/needs/form/create" method="POST" role="form" >
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <button stype="submit" class="btn btn-primary">Etablir Bessoin</button>
+                    </form>
+                    <form action="/request" method="POST" role="form" >
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <button stype="submit" class="btn btn-primary">Formuler requete</button>
+                    </form>
+                </div>
                 <table class="table table-bordered mt32">
                 <thead>
                     <tr>
@@ -14,7 +25,9 @@
                         <th class="text-center"><span>Unit price</span></th>
                         <th class="text-center"><span>Total price</span></th>
                         <th class="text-center"><span>User</span></th>
-                        <th class="text-center"><span>requests</span></th>
+                        <th class="text-center"><span>Requete</span></th>
+                        <th class="text-center"><span>Action</span></th>
+<!--                        <th class="text-center"><span>Action</span></th>-->
                     </tr>
                 </thead>
                 <tbody>
@@ -30,14 +43,16 @@
                             <td><span t-field="need.user_id"/></td>
                             <td><span t-field="need.request_id"/></td>
                             <td>
-                                <form action="/delete_need" method="post">
-                                    <field name="object_id" widget="hidden" value="okay"/>
-                                    <button type="submit">Delete</button>
-                                </form>
-                                 <form action="/edit_need" method="post">
-                                    <field name="object_id" widget="hidden" value="{{ need.object }}"/>
-                                    <button type="submit">Edit</button>
-                                </form>
+                                <div class="row">
+                                     <form role="form" action="/needs/delete" method="POST" class="col-6">
+                                        <input name="object_id" type="hidden" t-att-value="need.object"/>
+                                        <button type="submit" class="btn btn-primary">Delete</button>
+                                     </form>
+                                    <form action="/needs/form/edit" method="post" class="col-6">
+                                        <input name="object_id" type="hidden" t-att-value="need.object"/>
+                                        <button type="submit" class="btn btn-danger">Edit</button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                     </t>
@@ -45,5 +60,56 @@
             </table>
             </div>
         </t>
-    </template>
+        </template>
+        
+        <template id="hackathon.formNeed" name="form need">
+            <t t-call="website.layout">
+            <div class="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <form role="form" action="/needs/from/create" method="POST">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <div class="form-group">
+                                <label for="object" class="control-label">Object </label>
+                                <input type="text" name="object" id="object" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="impulsion" class="control-label">impulsion </label>
+                                <input type="text" name="impulsion" id="impulsion" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="description" class="control-label">description </label>
+                                <input type="text" name="description" id="description" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="reference" class="control-label">reference</label>
+                                <input type="text" name="reference" id="reference" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="quantity" class="control-label">quantity</label>
+                                <input type="number" name="quantity" id="quantity" class="form-control"/>
+                            </div>
+
+                           <div class="form-group">
+                                <label for="Unit_price" class="control-label">Unit price</label>
+                                <input type="number" name="Unit_price" id="Unit_price" class="form-control"/>
+                           </div>
+
+                            <div class="form-group">
+                                <label for="Total_price" class="control-label">total price</label>
+                                <input type="number" name="Total_price" id="Total_price" class="form-control"/>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Create Need</button>
+                                <button type="reset" class="btn btn-danger">Reset</button>
+                                <a href="/needs/list" class="btn btn-secondary">Return</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </t>    
+        </template>
+    </data>
 </odoo>

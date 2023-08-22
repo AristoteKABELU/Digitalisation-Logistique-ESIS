@@ -1,0 +1,87 @@
+<odoo>
+    <template id="formMateriel" name="form materiel">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <form role="form" action="/materiel/form/create" method="POST">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <div class="form-group">
+                                <label for="num_serial" class="contro-label">Numero serie</label>
+                                <input type="text" name="num_serial" t-att-value="num_serial" id="num_serial" class="form-control" placeholder="serie 22" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <select class="custom-select">
+                                    <t t-foreach="categories" t-as="category">
+                                        <option class="custom-option" t-att-value="category.designation" value="category.designation">
+                                        <t t-esc="category.designation"/>
+                                        </option>
+                                    </t>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                            <select class="custom-select">
+                                <t t-foreach="registrations" t-as="registration">
+                                    <option class="custom-option" t-att-value="registration.registration_date" value="registration.registration_date">
+                                        <t t-esc="registration.registration_date"/>
+                                    </option>
+                                </t>
+                            </select>
+                            </div>
+                            <div class="clearfix oe_login_buttons">
+                                <button type="submit" class="btn btn-primary pull-left">Creer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="hackathon.listMateriel" name="lsit materiel">
+        <t t-call="website.layout">
+            <div class="container">
+            <br/>
+            <div class="row">
+                 <form action="/materiel/form" method="POST" role="form" class="col-6">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <button stype="submit" class="btn btn-primary">Creer materiel</button>
+                </form>
+            </div>
+            <br/>
+            <table class="table table-bordered mt32">
+                <thead>
+                    <tr>
+                        <th class="text-center"><span>Num_serial</span></th>
+                        <th class="text-center"><span>Registration</span></th>
+                        <th class="text-center"><span>Category</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="materiels" t-as="materiel">
+                        <tr class="text-center">
+                            <td><span t-field="materiel.num_serial"/></td>
+                            <td><span t-field="materiel.registration_id"/></td>
+                            <td><span t-field="materiel.category_id"/></td>
+                            <td>
+                                <div class="row">
+                                    <form role="form" action="/materiel/delete" method="POST" class="col-6">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <input name="num_serial_id" type="hidden" t-att-value="materiel.num_serial"/>
+                                        <button type="submit" class="btn btn-primary">Delete</button>
+                                    </form>
+                                    <form action="/materiel/form/edit" method="post" class="col-6">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <input name="num_serial_id" type="hidden" t-att-value="materiel.num_serial"/>
+                                        <button type="submit" class="btn btn-danger">Edit</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+            </div>
+        </t>
+    </template>
+</odoo>

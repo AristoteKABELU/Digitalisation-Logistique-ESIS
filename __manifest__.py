@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'website'],
 
     # always loaded
     'data': [
@@ -34,7 +34,6 @@
         'views/admin/registration_views.xml',
         'views/admin/needs_views.xml',
         'views/admin/materiel_views.xml',
-<<<<<<< HEAD
         'views/admin/delivery_views.xml',
         'views/needs.xml',
         'views/request.xml',
@@ -42,9 +41,9 @@
         'views/subalterne.xml',
         'views/login.xml',
         'views/responsable.xml',
-=======
+        'views/allocation.xml',
+        'views/materiel.xml',
         'views/admin/delivery_views.xml'
->>>>>>> 8ec4f9b515fe5e18336fe4eab453e1b7ad17f547
     ],
     # only loaded in demonstration mode
     'demo': [

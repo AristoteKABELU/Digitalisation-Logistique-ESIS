@@ -33,6 +33,13 @@
             <field name="given_to"/>
             <field name="user_id"/>
           </group>
+          <group>
+            <notebook>
+              <page string="List utilisateurs">
+                  <field name="user_id"/>
+              </page>
+            </notebook>
+          </group>
         </form>
       </field>
     </record>
