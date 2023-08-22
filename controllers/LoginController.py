@@ -14,6 +14,6 @@ class Login(http.Controller):
                 return http.request.render('hackathon.subalternePage', {})
 
 
-    @http.route('/login', auth='public', website=True)
+    @http.route('/', auth='public', website=True)
     def loginPage(self, **kw):
         return http.request.render('hackathon.loginPage', {})

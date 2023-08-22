@@ -2,16 +2,18 @@
 {
     'name': "hackathon",
 
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+    'icon': "/home/snoop/dev-odoo/my_addons/hackathon/static/src/img/logoEsis.png",
+
+    'summary': """ 
+        Dans le souci de la digitalisation Esis, à travers son centre de recherche et développement CREDIA organise un Hackathon basé sur "ESIS-Digital", un projet conduit par Credia sur l'informatisation et la numérisation pour améliorer les processus internes de ESIS.
+        Dans cette première édition du Hackathon Esis Digital, il est demandé aux participants de proposer une solution qui répond aux différents besoins de la logistique à ESIS.
+        """,
 
     'description': """
-        Long description of module's purpose
+        Gestion de la logistique
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Groupe Mugiwara",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
