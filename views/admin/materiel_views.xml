@@ -18,23 +18,11 @@
       <field name="name">materiel form</field>
       <field name="model">hackathon.materiel</field>
       <field name="arch" type="xml">
-        <forme>
-          <group>
-            <field name="num_serial"/>
-            <field name="registration_id"/>
-            <field name="category_id"/>
-          </group>
-          <group>
-            <notebook>
-              <page string="List registration">
-                <field name="registration_id"/>
-              </page>
-              <page string="List category">
-                <field name="category_id"/>
-              </page>
-            </notebook>
-          </group>
-        </forme>
+        <tree>
+          <field name="num_serial"/>
+          <field name="registration_id"/>
+          <field name="category_id"/>
+        </tree>
       </field>
     </record>
     <!-- actions opening views on models -->

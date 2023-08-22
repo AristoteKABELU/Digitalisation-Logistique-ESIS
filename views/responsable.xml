@@ -2,45 +2,28 @@
     <template id="responsablePage" name="responsable">
         <t t-call="website.layout">
             <div id="wrap">
-                <div class="oe_structure">
-                    <li>
-                        <a href="#">Gerer materiels</a>
-                        <ul class="sub-menu">
-                            <li>
-                                <form action="/materiel/list" method="post" class="col-6">
-                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                                    <button type="submit" class="btn btn-danger">Enregistrer</button>
-                                </form>
-                            </li>
-                                <form action="/allocation/list" method="post" class="col-6">
-                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                                    <button type="submit" class="btn btn-danger">Allouer</button>
-                                </form>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Gerer demande</a>
-                        <ul class="sub-menu">
-                            <li>
-                                <form action="/request/form" method="post" class="col-6">
-                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                                    <button type="submit" class="btn btn-danger">Effectuer demande</button>
-                                </form>
-                            </li>
-                            <li>
-                                <form action="/needs/list" method="post" class="col-6">
-                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                                    <button type="submit" class="btn btn-danger">Voir besoin</button>
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <form action="#" method="post" class="col-6">
-                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                            <button type="submit" class="btn btn-danger">Generer rapport</button>
-                        </form>
-                    </li>
+                 <div class="oe_structure">
+                     <div class="row">
+                         <form action="/materiel/list" method="post" class="col-3 text-center">
+                              <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                              <button type="submit" class="btn btn-primary">Materiel</button>
+                         </form>
+
+                         <form action="/allocation/list" method="post" class="col-3 text-center">
+                              <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                              <button type="submit" class="btn btn-primary">Allouer</button>
+                         </form>
+
+                          <form action="/needs/list" method="post" class="col-3 text-center">
+                              <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                              <button type="submit" class="btn btn-primary">Requete</button>
+                          </form>
+
+                         <form action="#" method="post" class="col-3 text-center">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <button type="submit" class="btn btn-primary">Generer rapport</button>
+                         </form>
+                    </div>
                 </div>
             </div>
         </t>

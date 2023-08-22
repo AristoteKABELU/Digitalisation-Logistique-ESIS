@@ -45,10 +45,12 @@
                             <td>
                                 <div class="row">
                                      <form role="form" action="/needs/delete" method="POST" class="col-6">
+                                         <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                                         <input name="object_id" type="hidden" t-att-value="need.object"/>
                                         <button type="submit" class="btn btn-primary">Delete</button>
                                      </form>
                                     <form action="/needs/form/edit" method="post" class="col-6">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                                         <input name="object_id" type="hidden" t-att-value="need.object"/>
                                         <button type="submit" class="btn btn-danger">Edit</button>
                                     </form>
@@ -61,7 +63,7 @@
             </div>
         </t>
         </template>
-        
+
         <template id="hackathon.formNeed" name="form need">
             <t t-call="website.layout">
             <div class="wrap">
@@ -109,7 +111,7 @@
                     </div>
                 </div>
             </div>
-            </t>    
+            </t>
         </template>
     </data>
 </odoo>
