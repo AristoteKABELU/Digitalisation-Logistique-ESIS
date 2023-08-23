@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <template id="subalternePage" name="sulaterne">
+    <template id="SGDAPage" name="sulaterne">
         <h1>SGDA</h1>
     </template>
 </odoo>

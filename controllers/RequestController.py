@@ -1,7 +1,7 @@
 from odoo import http
 
 
-class RequestPage(http.Controller):
+class RequestController(http.Controller):
     # @http.route('/request/list', auth='public', methods=['POST'], website=True)
     # def listRequest(self):
     #     requests = http.request.env['hackathon.request'].sudo().search([])

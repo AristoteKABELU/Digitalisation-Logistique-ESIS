@@ -6,9 +6,9 @@
       <field name="name">materiel list</field>
       <field name="model">hackathon.materiel</field>
       <field name="arch" type="xml">
-        <tree>
-          <field name="num_serial"/>
-        </tree>
+        <form>
+            <field name="num_serial"/>
+        </form>
       </field>
     </record>
 

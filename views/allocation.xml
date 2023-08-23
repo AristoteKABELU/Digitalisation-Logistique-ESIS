@@ -28,7 +28,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                     <select name="user_id" class="custom-select">
+                                     <select class="custom-select">
                                             <t t-foreach="users" t-as="user">
                                                 <option class="custom-option" t-att-value="user.job_title"><t t-esc="user.job_title"/></option>
                                             </t>

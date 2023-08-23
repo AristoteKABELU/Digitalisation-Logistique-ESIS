@@ -10,7 +10,7 @@
                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                             <div class="form-group">
                                 <label for="email" class="control-label">Email </label>
-                                <input type="email" name="email" id="email" required="required"
+                                <input type="email" name="email" id="email" placeholder="aristotekabelu@esisalama.org" required="required"
                                     class="form-control"/>
                             </div>
                             <div class="form-group">

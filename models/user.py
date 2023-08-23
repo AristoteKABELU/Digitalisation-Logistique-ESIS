@@ -6,6 +6,7 @@ import bcrypt
 class User(models.Model):
     _name = 'hackathon.user'
 
+    id = fields.Integer('ID', default=lambda self: self.env['ir.sequence'].next_by_code('user.sequence'))
     name = fields.Char('name')
     lastname = fields.Char('lastname')
     firstname = fields.Char('firstname')

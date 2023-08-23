@@ -45,7 +45,7 @@
             <div class="row">
                  <form action="/materiel/form" method="POST" role="form" class="col-6">
                     <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                    <button stype="submit" class="btn btn-primary">Creer materiel</button>
+                    <button stype="submit" class="btn btn-primary">Enregistrer materiel</button>
                 </form>
             </div>
             <br/>

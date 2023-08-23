@@ -2,11 +2,11 @@
 
 from . import LoginController
 from . import MaterielController
-from . import GenerateRapport
+from . import GenerateRapportController
 from . import LoginController
 from . import NeedsController
 from . import RequestController
 from . import ResponsableController
 from . import SGADcontroller
 from . import SubalterneController
-from . import AllouerController
+from . import AllocationController

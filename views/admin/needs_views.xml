@@ -25,6 +25,7 @@
       <field name="model">hackathon.needs</field>
       <field name="arch" type="xml">
         <form>
+          <group>
               <field name="object"/>
               <field name="impulsion"/>
               <field name="description"/>
@@ -33,6 +34,18 @@
               <field name="Unit_price"/>
               <field name="Total_price"/>
               <field name="user_id"/>
+              <field name="request_id"/>
+          </group>
+          <group>
+            <notebook>
+              <page string="List of user">
+                <field name="user_id" />
+              </page>
+              <page string="List of request">
+                <field name="request_id" />
+              </page>
+            </notebook>
+          </group>
         </form>
       </field>
     </record>
