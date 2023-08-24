@@ -12,6 +12,7 @@ class NeedsController(http.Controller):
     def _render_list_needs(self, needs=None):
         if needs is None:
             needs = self._get_needs()
+        print(needs)
         return http.request.render(self.TEMPLATE_LIST, {'needs': needs})
 
     def _render_form_need(self):

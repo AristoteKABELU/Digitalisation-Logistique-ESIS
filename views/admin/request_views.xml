@@ -1,6 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
   <data>
+
+    <record id="user_sequence" model="ir.sequence">
+      <field name="name"> request Sequence</field>
+      <field name="code">request.sequence</field>
+      <field name="prefix">1</field>
+      <field name="padding">1</field>
+    </record>
     <!-- explicit list view definition -->
 
     <record model="ir.ui.view" id="request_list_view">
@@ -24,7 +30,8 @@
       <field name="model">hackathon.request</field>
       <field name="arch" type="xml">
         <tree>
-         <field name="object"/>
+           <field name="id_request"/>
+          <field name="object"/>
           <field name="applicant"/>
           <field name="imputation"/>
           <field name="state_request"/>

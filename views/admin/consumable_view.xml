@@ -1,5 +1,13 @@
 <odoo>
   <data>
+
+     <record id="consumable_sequence" model="ir.sequence">
+      <field name="name"> consumable Sequence</field>
+      <field name="code">consumable.sequence</field>
+      <field name="prefix">1</field>
+      <field name="padding">1</field>
+    </record>
+
     <!-- explicit list view definition -->
 
     <record model="ir.ui.view" id="hackathon.consumable_list">
@@ -7,6 +15,7 @@
       <field name="model">hackathon.consumable</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="id_consumable"/>
           <field name="name"/>
           <field name="description"/>
           <field name="type"/>

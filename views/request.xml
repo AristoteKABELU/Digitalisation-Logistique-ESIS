@@ -26,7 +26,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="st" class="control-label">date of request </label>
-                                <input type="text" name="applicant" id="applicant" class="form-control"/>
+                                <input type="date" name="applicant" id="applicant" class="form-control"/>
                             </div>
                              <div class="form-group">
                                  <select class="custom-select">
@@ -41,7 +41,7 @@
                                 <button type="reset" class="btn btn-danger">Reset</button>
                             </div>
                         </form>
-                         <form action="#" method="post">
+                         <form action="/needs/list" method="post">
                              <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                              <button type="submit" class="btn btn-secondary">Back</button>
                          </form>
@@ -52,15 +52,15 @@
 </template>
 
     <template id="hackathon.listRequest" name="list request">
-        <t t-call="website.layout">
-            <div class="container">
-                <div class="row">
-                    <form action="/request/form/" method="POST" role="form" >
-                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                        <button stype="submit" class="btn btn-primary">effectuer demande</button>
-                    </form>
-                </div>
-                <table class="table table-bordered mt32">
+    <t t-call="website.layout">
+        <div class="container">
+            <div class="row">
+                <form action="/request/form/" method="POST" role="form">
+                    <input type="hidden" name="csrf_token" t-att-value="http.request.csrf_token()"/>
+                    <button type="submit" class="btn btn-primary">effectuer requete</button>
+                </form>
+            </div>
+            <table class="table table-bordered mt32">
                 <thead>
                     <tr>
                         <th class="text-center"><span>Object</span></th>
@@ -70,7 +70,7 @@
                         <th class="text-center"><span>Quantity</span></th>
                         <th class="text-center"><span>dateofRequest</span></th>
                         <th class="text-center"><span>Needs</span></th>
-<!--                        <th class="text-center"><span>Action</span></th>-->
+                        <th class="text-center"><span>Action</span></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -83,12 +83,14 @@
                             <td><span t-field="request.dateofRequest"/></td>
                             <td>
                                 <div class="row">
-                                     <form role="form" action="/request/delete" method="POST" class="col-6">
+                                    <form role="form" action="/request/delete" method="POST" class="col-6">
                                         <input name="object" type="hidden" t-att-value="request.object"/>
+                                        <input type="hidden" name="csrf_token" t-att-value="http.request.csrf_token()"/>
                                         <button type="submit" class="btn btn-primary">Delete</button>
-                                     </form>
+                                    </form>
                                     <form action="/request/edit" method="post" class="col-6">
                                         <input name="object" type="hidden" t-att-value="request.object"/>
+                                        <input type="hidden" name="csrf_token" t-att-value="http.request.csrf_token()"/>
                                         <button type="submit" class="btn btn-danger">Edit</button>
                                     </form>
                                 </div>
@@ -97,7 +99,7 @@
                     </t>
                 </tbody>
             </table>
-            </div>
-        </t>
-    </template>
+        </div>
+    </t>
+</template>
 </odoo>

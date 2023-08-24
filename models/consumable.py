@@ -6,6 +6,7 @@ from odoo import models, fields, api
 class Consumable(models.Model):
     _name = 'hackathon.consumable'
 
+    id_consumable = fields.Integer('ID', default=lambda self: self.env['ir.sequence'].next_by_code('consumable.sequence'))
     name = fields.Char('name')
     description = fields.Char('description')
     type = fields.Char('type')

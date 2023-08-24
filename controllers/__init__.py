@@ -6,7 +6,4 @@ from . import GenerateRapportController
 from . import LoginController
 from . import NeedsController
 from . import RequestController
-from . import ResponsableController
-from . import SGADcontroller
-from . import SubalterneController
 from . import AllocationController

@@ -1,12 +1,20 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
 
+    <record id="needs_sequence" model="ir.sequence">
+        <field name="name"> needs Sequence</field>
+        <field name="code">needs.sequence</field>
+        <field name="prefix">1</field>
+        <field name="padding">1</field>
+     </record>
+
+    <!-- explicit list view definition -->
     <record model="ir.ui.view" id="needs_list_view">
       <field name="name">needs list</field>
       <field name="model">hackathon.needs</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="id_need"/>
           <field name="object"/>
           <field name="impulsion"/>
           <field name="description"/>
@@ -34,17 +42,7 @@
               <field name="Unit_price"/>
               <field name="Total_price"/>
               <field name="user_id"/>
-              <field name="request_id"/>
-          </group>
-          <group>
-            <notebook>
-              <page string="List of user">
-                <field name="user_id" />
-              </page>
-              <page string="List of request">
-                <field name="request_id" />
-              </page>
-            </notebook>
+<!--              <field name="request_id"/>-->
           </group>
         </form>
       </field>

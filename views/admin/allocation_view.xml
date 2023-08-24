@@ -1,5 +1,14 @@
 <odoo>
   <data>
+
+     <record id="allocation_sequence" model="ir.sequence">
+        <field name="name"> allocation Sequence</field>
+        <field name="code">allocation.sequence</field>
+        <field name="prefix">1</field>
+        <field name="padding">1</field>
+     </record>
+
+
     <!-- explicit list view definition -->
 
     <record model="ir.ui.view" id="hackathon.allocation_list">
@@ -7,6 +16,7 @@
       <field name="model">hackathon.allocation</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="id_allocation"/>
           <field name="motif"/>
           <field name="inserted_date"/>
           <field name="updated_date"/>

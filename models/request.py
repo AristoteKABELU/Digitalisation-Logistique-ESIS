@@ -4,6 +4,8 @@ from odoo import models, fields, api
 class Request(models.Model):
     _name = 'hackathon.request'
 
+    #is_frontend_multilang = fields.Boolean(string='Is Frontend Multilang')
+    id_request = fields.Integer('ID', default=lambda self: self.env['ir.sequence'].next_by_code('request.sequence'))
     object = fields.Text('object')
     applicant = fields.Char('applicant')
     imputation = fields.Char('imputation')

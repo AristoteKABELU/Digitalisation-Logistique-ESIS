@@ -6,6 +6,7 @@ from odoo import models, fields, api
 class Stock(models.Model):
     _name = 'hackathon.stock'
 
+    id_stock = fields.Integer('ID', default=lambda self: self.env['ir.sequence'].next_by_code('stock.sequence'))
     add_date = fields.Date('add date')
     deleted_date = fields.Date('deleted date')
     updated_date = fields.Date('updated date')

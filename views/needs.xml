@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <data>
-        <template id="hackathon.listNeeds" name="need page">
+        <template id="hackathon.listNeeds" name="list need">
         <t t-call="website.layout">
             <div class="container">
                 <div class="row">
@@ -9,7 +9,7 @@
                         <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                         <button stype="submit" class="btn btn-primary">Etablir Bessoin</button>
                     </form>
-                    <form action="/request" method="POST" role="form" >
+                    <form action="/request/form" method="POST" role="form" >
                         <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                         <button stype="submit" class="btn btn-primary">Formuler requete</button>
                     </form>
@@ -69,7 +69,7 @@
             <div class="wrap">
                 <div class="oe_structure">
                     <div class="container">
-                        <form role="form" action="/needs/from/create" method="POST">
+                        <form role="form" action="/needs/form/create" method="POST">
                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                             <div class="form-group">
                                 <label for="object" class="control-label">Object </label>

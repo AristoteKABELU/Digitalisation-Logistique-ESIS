@@ -1,12 +1,20 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
 
+    <record id="stock_sequence" model="ir.sequence">
+        <field name="name"> stock Sequence</field>
+        <field name="code">stock.sequence</field>
+        <field name="prefix">1</field>
+        <field name="padding">1</field>
+    </record>
+
+    <!-- explicit list view definition -->
     <record model="ir.ui.view" id="stock_list_view">
       <field name="name">stock list</field>
       <field name="model">hackathon.stock</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="id_stock"/>
           <field name="add_date"/>
           <field name="deleted_date"/>
           <field name="updated_date"/>
@@ -23,6 +31,7 @@
       <field name="model">hackathon.stock</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="id_stock"/>
           <field name="add_date"/>
           <field name="deleted_date"/>
           <field name="updated_date"/>

@@ -4,6 +4,7 @@ from odoo import models, fields, api
 class Allocation(models.Model):
     _name = 'hackathon.allocation'
 
+    id_allocation = fields.Integer('ID', default=lambda self: self.env['ir.sequence'].next_by_code('allocation.sequence'))
     motif = fields.Char('motif')
     inserted_date = fields.Date('inserted date')
     updated_date = fields.Date('updated date')
